@@ -8,6 +8,9 @@ using Microsoft.OpenApi.Models;
 using NerdShopping.API.Models.Context;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using NerdShopping.API.Config;
+using NerdShopping.API.Repository;
 
 namespace NerdShopping.API
 {
@@ -26,6 +29,11 @@ namespace NerdShopping.API
             var connection = @"Server=localhost\SQLEXPRESS;Database=NSDB;Trusted_Connection=True;";
 
             services.AddDbContext<SQLContext>(options => options.UseSqlServer(connection));
+
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
