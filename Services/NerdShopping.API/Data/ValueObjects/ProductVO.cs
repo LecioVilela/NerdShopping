@@ -2,7 +2,7 @@ namespace NerdShopping.API.Data.ValueObjects
 {
     public class ProductVO
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }

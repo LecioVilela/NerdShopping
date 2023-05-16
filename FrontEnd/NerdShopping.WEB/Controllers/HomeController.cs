@@ -1,11 +1,11 @@
-﻿using System;
+﻿using NerdShopping.WEB.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using NerdShopping.WEB.Models;
 
 namespace NerdShopping.WEB.Controllers
 {

@@ -28,7 +28,7 @@ namespace NerdShopping.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductVO>> FindById(long id)
+        public async Task<ActionResult<ProductVO>> FindById(int id)
         {
             var product = await _repository.FindById(id);
             if (product is null) return NotFound();
@@ -52,7 +52,7 @@ namespace NerdShopping.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(long id)
+        public async Task<ActionResult> Delete(int id)
         {
             var status = await _repository.Delete(id);
             if (status is false) return BadRequest();

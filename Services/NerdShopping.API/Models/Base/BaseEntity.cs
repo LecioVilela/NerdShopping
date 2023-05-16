@@ -7,6 +7,6 @@ namespace NerdShopping.API.Models.Base
     {
         [Key]
         [Column("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
     }
 }

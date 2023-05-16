@@ -10,7 +10,7 @@ namespace NerdShopping.API.Migrations
                 name: "tab_product",
                 columns: table => new
                 {
-                    id = table.Column<long>(type: "bigint", nullable: false)
+                    id = table.Column<long>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     des_name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     vl_price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
